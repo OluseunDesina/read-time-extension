@@ -1,12 +1,22 @@
 {
     "manifest_version": 3,
-    "version": 1.0,
+    "version": "1.0",
     "name": "reading time",
     "description": "Add the reading time to Chrome Extension documentation articles",
-
-    "icons" : {
+    "icons": {
         "16": "icons.ico/favicon-16x16.png",
         "32": "icons.ico/favicon-32x32.png",
         "48": "icons.ico/favicon-48x48.png"
-    }
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://developer.chrome.com/docs/extensions/*",
+                "https://developer.chrome.com/docs/webstore/*"
+            ]
+        }
+    ]
 }
